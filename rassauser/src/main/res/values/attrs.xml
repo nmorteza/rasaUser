@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Steps3">
+   <!--     <attr name="android:text"/>
+        <attr name="android:textColor"/>-->
+        <attr name="stepIndex" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressView">
+        <!--     <attr name="android:text"/>
+             <attr name="android:textColor"/>-->
+        <attr name="mode" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="ScaleUpImageView">
+        <!--     <attr name="android:text"/>
+             <attr name="android:textColor"/>-->
+        <attr name="startDelay" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="Steps4">
+        <!--     <attr name="android:text"/>
+             <attr name="android:textColor"/>-->
+        <attr name="step" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="IconFont">
+        <!--     <attr name="android:text"/>
+             <attr name="android:textColor"/>-->
+        <attr name="isSquare" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="CButtonAnimate">
+        <!--     <attr name="android:text"/>
+             <attr name="android:textColor"/>-->
+        <attr name="playSound" format="boolean"/>
+    </declare-styleable>
+
+
+        <declare-styleable name="AspectRatioImageView">
+            <attr name="aspectRatio" format="float" />
+            <attr name="aspectRatioEnabled" format="boolean" />
+            <attr name="dominantMeasurement">
+                <enum name="width" value="0" />
+                <enum name="height" value="1" />
+            </attr>
+        </declare-styleable>
+
+</resources>

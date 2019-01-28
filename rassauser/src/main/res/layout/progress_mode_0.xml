@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/White"
+    android:layoutDirection="ltr"
+
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rel_progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        >
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/colorBtnGreen"
+                android:visibility="visible"
+                />
+
+
+        <com.rassa.rassauser.utils.customViews.CustomTextViewBold
+            android:id="@+id/text_loading"
+            android:layout_below="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_13"
+            android:layout_margin="@dimen/margin_10"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/colorBtnGreen"
+            android:text="در حال دریافت اطلاعات ..."
+            />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rel_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            >
+            <com.rassa.rassauser.utils.customViews.CustomTextViewBold
+                android:id="@+id/text_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_13"
+                android:layout_margin="@dimen/margin_5"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textColor="@color/Black"
+                android:text="بروز خطا مجددا تلاش نمایید"
+                />
+
+            <com.rassa.rassauser.utils.customViews.cButton
+                android:id="@+id/btn_retry"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/text_error"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorAccent"
+                android:text="@string/retry"
+                />
+
+        </RelativeLayout>
+
+</RelativeLayout>

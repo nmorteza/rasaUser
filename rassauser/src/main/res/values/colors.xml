@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FAFAFA</color>
+    <color name="colorPrimaryDark">#FAFAFA</color>
+    <color name="colorAccent">#3874de</color>
+    <color name="colorAccentLight">#6097f6</color>
+    <color name="colorBtnGreen">#149d55</color>
+    <color name="status_bar">#05c060</color>
+    <color name="status_bar_2">#cbdb2a</color>
+    <color name="status_bar_3">#72bf44</color>
+
+
+
+    <!--light green-->
+    <color name="rasa_user_md_light_green_50">#F1F8E9</color>
+    <color name="rasa_user_md_light_green_100">#DCEDC8</color>
+    <color name="rasa_user_md_light_green_200">#C5E1A5</color>
+    <color name="rasa_user_md_light_green_300">#AED581</color>
+    <color name="rasa_user_md_light_green_400">#9CCC65</color>
+    <color name="rasa_user_md_light_green_500">#8BC34A</color>
+    <color name="rasa_user_md_light_green_600">#7CB342</color>
+    <color name="rasa_user_md_light_green_700">#689F38</color>
+    <color name="rasa_user_md_light_green_800">#558B2F</color>
+    <color name="rasa_user_md_light_green_900">#33691E</color>
+    <color name="rasa_user_md_light_green_A100">#CCFF90</color>
+    <color name="rasa_user_md_light_green_A200">#B2FF59</color>
+    <color name="rasa_user_md_light_green_A400">#76FF03</color>
+    <color name="rasa_user_md_light_green_A700">#64DD17</color>
+
+    <color name="rasa_user_light_level_0">#FFFFFF</color>
+    <color name="rasa_user_light_level_1">#eeeeee</color>
+    <color name="rasa_user_light_level_2">#cacaca</color>
+    <color name="rasa_user_light_level_3">#F5F5F5</color>
+    <color name="rasa_user_light_level_4">#919191</color>
+
+    <color name="rasa_user_light_alpha_0">#daffffff</color>
+    <color name="rasa_user_light_alpha_1">#F5F5F5</color>
+    <color name="rasa_user_light_level_5">#9088c2</color>
+
+    <color name="rasa_user_dark_level_1">#373447</color>
+    <color name="rasa_user_dark_level_2">#312e3f</color>
+    <color name="rasa_user_dark_alpha_1">#64312e3f</color>
+    <color name="rasa_user_dark_alpha_2">#645a5a5a</color>
+
+    <color name="rasa_user_dark_alpha_3">#64000000</color>
+    <color name="rasa_user_dark_alpha_4">#9a000000</color>
+
+
+    <color name="White">#ffffff</color>
+    <color name="Black">#000000</color>
+    <color name="Red">#F71A1A</color>
+
+</resources>
