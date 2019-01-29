@@ -32,15 +32,11 @@ public class  MUserInfo implements iMUserInfo {
         new Register().profile(new iProfile.iResult() {
             @Override
             public void onSuccessGetUserInfo(UserInfo userInfo) {
-                userProfile.saveUserInfo(userInfo);
-                userProfile.setKeyRegistered(true);
 
-                iPUserInfo.getUserInfoSuccess(userInfo);
             }
 
             @Override
             public void onFailedGetUserInfo(int ErrorId, String ErrorMessage) {
-                iPUserInfo.getUserInfoFailed(ErrorMessage);
             }
 
             @Override
@@ -60,8 +56,5 @@ public class  MUserInfo implements iMUserInfo {
     }
 
 
-    @Override
-    public void getUserInfo(String phoneNumber) {
-        profile.startGetUserInfo(userProfile.getKeyJwt("-1"),phoneNumber);
-    }
+
 }

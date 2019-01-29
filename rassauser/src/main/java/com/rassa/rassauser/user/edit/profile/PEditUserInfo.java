@@ -1,4 +1,4 @@
-package com.rassa.rassauser.user.register.userInfo;
+package com.rassa.rassauser.user.edit.profile;
 
 import android.content.Context;
 
@@ -6,14 +6,14 @@ import com.rassa.rassauser.webApi.register.registerUserInfo.model.ParamsRegister
 import com.rassa.rassauser.webApi.register.registerUserInfo.model.UserInfo;
 
 
-public class PUserInfo implements iPUserInfo {
+public class PEditUserInfo implements iPUEditUserInfo {
 
-    private iVUserInfo iVUserInfo;
-    private MUserInfo mUserInfo;
+    private iVEditUserInfo iVUserInfo;
+    private MEditUserInfo mUserInfo;
 
-    public PUserInfo(iVUserInfo iVUserInfo) {
+    public PEditUserInfo(iVEditUserInfo iVUserInfo) {
         this.iVUserInfo = iVUserInfo;
-        mUserInfo=new MUserInfo(this);
+        mUserInfo=new MEditUserInfo(this);
     }
 
     @Override

@@ -14,6 +14,5 @@ public interface iMUserInfo {
 
     void setUserInfo(ParamsRegister paramsRegister);
 
-    void getUserInfo(String phoneNumber);
 
 }

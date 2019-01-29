@@ -99,7 +99,7 @@ public class RegisterUserActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_user);
+        setContentView(R.layout.rs_activity_register_user);
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.rasa_user_md_light_green_A700));
             // getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.red_level_3));
@@ -109,7 +109,10 @@ public class RegisterUserActivity extends AppCompatActivity implements
         userProfile = new UserProfile(this);
         setUpFrg();
         progressView = findViewById(R.id.progressView);
-        getSupportFragmentManager().beginTransaction().add(R.id.frame_fragment, fragmentSendPhoneNumber, KEY_FRGSendPhoneNumber).commit();
+       // getSupportFragmentManager().beginTransaction().add(R.id.frame_fragment, fragmentSendPhoneNumber, KEY_FRGSendPhoneNumber).commit();
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_fragment, fragmentUserInfo, KEY_FRGUserInfo).addToBackStack(null).commit();
+
     }
 
 
@@ -183,13 +186,12 @@ public class RegisterUserActivity extends AppCompatActivity implements
                         (userInfo.getFirstName() == null && userInfo.getLastName() == null)) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.frame_fragment, fragmentUserInfo, KEY_FRGUserInfo).addToBackStack(null).commit();
                 } else {
-                    /*userProfile.saveUserInfo(userInfo);
+                    userProfile.saveUserInfo(userInfo);
                     userProfile.setKeyRegistered(true);
                     Intent intent = new Intent();
                     setResult(Activity.RESULT_OK, intent);
-                    finish();*/
+                    finish();
 
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frame_fragment, fragmentUserInfo, KEY_FRGUserInfo).addToBackStack(null).commit();
 
                 }
             }
@@ -211,39 +213,21 @@ public class RegisterUserActivity extends AppCompatActivity implements
         }).startGetUserInfo(userProfile.getKeyJwt("-1"), phoneNumber);
     }
 
+    @Override
+    public void VerifyCodeFailed(String message) {
+
+    }
+
 
     ///////////////////////////////////////////////////////////////////////////
     // fragmentUserInfo
     ///////////////////////////////////////////////////////////////////////////
 
-    @Override
-    public void onStartGetUserInfo() {
-        progressView.setVisibility(View.VISIBLE);
-        progressView.showProgress();
-    }
 
-    @Override
-    public void getUserInfoSuccess() {
-        progressView.setVisibility(View.GONE);
-        progressView.showProgress();
-    }
-
-    @Override
-    public void getUserInfoFailed(String msg) {
-        progressView.setVisibility(View.VISIBLE);
-        progressView.showError(msg);
-        progressView.setOnRetryClick(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fragmentUserInfo.retryGetProfile();
-            }
-        });
-    }
 
     @Override
     public void onStartSetUserInfo() {
-       /* progressView.setVisibility(View.VISIBLE);
-        progressView.showProgress();*/
+
     }
 
     @Override
@@ -258,14 +242,6 @@ public class RegisterUserActivity extends AppCompatActivity implements
 
     @Override
     public void setUserInfoFailed(String msg) {
-        progressView.setVisibility(View.VISIBLE);
-        progressView.showError(msg);
 
-        progressView.setOnRetryClick(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fragmentUserInfo.retrySetProfile();
-            }
-        });
     }
 }

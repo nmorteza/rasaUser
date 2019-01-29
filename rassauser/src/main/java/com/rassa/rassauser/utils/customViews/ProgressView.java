@@ -64,7 +64,7 @@ public class ProgressView extends RelativeLayout {
     private void init() {
 
         if (mode == 0) {//full screen mode
-            inflate(getContext(), R.layout.progress_mode_0, this);
+            inflate(getContext(), R.layout.rs_progress_mode_0, this);
         }else if(mode == 1){
           //  inflate(getContext(), R.layout.progress_mode_1, this);
         }

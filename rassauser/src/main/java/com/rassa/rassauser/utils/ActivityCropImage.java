@@ -58,7 +58,7 @@ public class ActivityCropImage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crop_image);
+        setContentView(R.layout.rs_activity_crop_image);
 
 
         aspectRatioX = getIntent().getIntExtra(KEY_ASPECT_RADIO_X, 1);

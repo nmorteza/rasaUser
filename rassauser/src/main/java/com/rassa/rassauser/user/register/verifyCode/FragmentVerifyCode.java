@@ -80,7 +80,7 @@ public class FragmentVerifyCode extends Fragment implements iVVerifyCode {
         userProfile=new UserProfile(getContext());
 
         pVerifyCode = new PVerifyCode(this);
-        view = inflater.inflate(R.layout.fragment_send_key, container, false);
+        view = inflater.inflate(R.layout.rs_fragment_send_key, container, false);
         setView();
         return view;
     }
@@ -208,7 +208,9 @@ public class FragmentVerifyCode extends Fragment implements iVVerifyCode {
         StartVerifyCode=false;
         progress.setVisibility(View.GONE);
         textMessageCode.setEnabled(true);
-        mListener.VerifyCodeSuccess();
+        if (mListener!=null) {
+            mListener.VerifyCodeSuccess();
+        }
     }
 
     @Override
@@ -218,6 +220,9 @@ public class FragmentVerifyCode extends Fragment implements iVVerifyCode {
         textMessageCode.setEnabled(true);
         textError.setText(msg);
         textError.setVisibility(View.VISIBLE);
+        if (mListener!=null) {
+            mListener.VerifyCodeFailed(msg);
+        }
     }
 
 
@@ -241,9 +246,9 @@ public class FragmentVerifyCode extends Fragment implements iVVerifyCode {
             @Override
             public void run() {
                 try{
-                    textResendCode.setText(R.string.res_end_key);
+                    textResendCode.setText(R.string.rs_res_end_key);
                     textResendCode.setEnabled(true);
-                    textResendCode.setTextColor(ContextCompat.getColor(getContext(), R.color.Red));
+                    textResendCode.setTextColor(ContextCompat.getColor(getContext(), R.color.rs_Red));
                 }catch (Exception ex){
 
                 }
@@ -257,9 +262,9 @@ public class FragmentVerifyCode extends Fragment implements iVVerifyCode {
             @Override
             public void run() {
                 try {
-                    textResendCode.setTextColor(ContextCompat.getColor(getContext(), R.color.Red));
+                    textResendCode.setTextColor(ContextCompat.getColor(getContext(), R.color.rs_Red));
                     textResendCode.setEnabled(false);
-                    textResendCode.setText(getString(R.string.res_end_key) + " " + timerCounter);
+                    textResendCode.setText(getString(R.string.rs_res_end_key) + " " + timerCounter);
                 }catch (Exception ex){
 
                 }
@@ -270,6 +275,7 @@ public class FragmentVerifyCode extends Fragment implements iVVerifyCode {
     public interface OnFragmentInteractionListener {
         void onStartVerifyCode(String verifyCode);
         void VerifyCodeSuccess();
+        void VerifyCodeFailed(String message);
         void onBackPressed();
     }
 }

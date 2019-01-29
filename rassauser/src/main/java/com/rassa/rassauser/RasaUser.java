@@ -3,6 +3,8 @@ package com.rassa.rassauser;
 import android.content.Context;
 import android.content.Intent;
 
+import com.rassa.rassauser.user.edit.EditUserActivity;
+import com.rassa.rassauser.user.edit.profile.FragmentEditUserInfo;
 import com.rassa.rassauser.user.register.RegisterUserActivity;
 import com.rassa.rassauser.user.register.sendPhoneNumber.FragmentSendPhoneNumber;
 import com.rassa.rassauser.user.register.userInfo.FragmentUserInfo;
@@ -44,6 +46,11 @@ public class RasaUser {
         return intent;
     }
 
+    public Intent getIntentActivityEditUser() {
+        Intent intent = new Intent(context, EditUserActivity.class);
+        return intent;
+    }
+
     ///////////////////////////////////////////////////////////////////////////
     // Fragment
     ///////////////////////////////////////////////////////////////////////////
@@ -62,6 +69,11 @@ public class RasaUser {
     public FragmentUserInfo getFragmentUserInfo() {
         FragmentUserInfo fragmentUserInfo = new FragmentUserInfo();
         return fragmentUserInfo;
+    }
+
+    public FragmentEditUserInfo getFragmentEditUserInfo() {
+        FragmentEditUserInfo fragmentEditUserInfo = new FragmentEditUserInfo();
+        return fragmentEditUserInfo;
     }
 
 

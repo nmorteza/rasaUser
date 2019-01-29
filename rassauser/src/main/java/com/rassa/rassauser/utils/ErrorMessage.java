@@ -8,9 +8,9 @@ import com.rassa.rassauser.R;
  */
 
 public enum ErrorMessage {
-        ERROR_NETWORK_SERVER_SIDE(-1, RUserApp.getContext().getString(R.string.error_server_side)),
-        ERROR_NETWORK_UNAVALABLE(0, RUserApp.getContext().getString(R.string.error_network_connection)),
-        ERROR_404(404,RUserApp.getContext().getString(R.string.error_server_not_found));
+        ERROR_NETWORK_SERVER_SIDE(-1, RUserApp.getContext().getString(R.string.rs_error_server_side)),
+        ERROR_NETWORK_UNAVALABLE(0, RUserApp.getContext().getString(R.string.rs_error_network_connection)),
+        ERROR_404(404,RUserApp.getContext().getString(R.string.rs_error_server_not_found));
 
 
 

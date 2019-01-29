@@ -25,7 +25,7 @@
                 android:layout_centerInParent="true"
                 android:clickable="true"
                 android:gravity="center"
-                android:text="@string/register"
+                android:text="@string/rs_register"
                 android:textColor="@color/rasa_user_light_level_1"
                 android:textSize="15sp"
                 android:visibility="visible" />
@@ -52,9 +52,9 @@
                     android:text="خطایی رخ داده است"
                     android:gravity="center"
                     android:padding="3dp"
-                    android:background="@color/Red"
-                    android:textColor="@color/White"
-                    android:textSize="@dimen/font_size_12"
+                    android:background="@color/rs_Red"
+                    android:textColor="@color/rs_White"
+                    android:textSize="@dimen/rs_font_size_12"
                     android:visibility="gone" />
 
                 <com.makeramen.roundedimageview.RoundedImageView
@@ -64,8 +64,8 @@
                     android:layout_below="@+id/text_error"
 
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="@dimen/margin_10"
-                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginRight="@dimen/rs_margin_10"
+                    android:layout_marginTop="@dimen/rs_margin_10"
                     android:src="@drawable/ruser_empty_gray"
                     app:riv_corner_radius="40dp" />
 
@@ -85,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:layout_below="@+id/image_user_info_edit"
-                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/rs_margin_10"
                     android:background="@color/rasa_user_md_light_green_A400" />
 
                 <RelativeLayout
@@ -100,11 +100,11 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/margin_10"
-                        android:paddingBottom="@dimen/margin_5"
-                        android:paddingLeft="@dimen/margin_5"
-                        android:paddingRight="@dimen/margin_5"
-                        android:paddingTop="@dimen/margin_5"
+                        android:layout_marginRight="@dimen/rs_margin_10"
+                        android:paddingBottom="@dimen/rs_margin_5"
+                        android:paddingLeft="@dimen/rs_margin_5"
+                        android:paddingRight="@dimen/rs_margin_5"
+                        android:paddingTop="@dimen/rs_margin_5"
                         android:text=""
                         android:textColor="@color/rasa_user_md_light_green_A700"
                         android:textSize="25dp" />
@@ -114,26 +114,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/rs_margin_10"
                         android:gravity="right"
                         android:layout_toLeftOf="@+id/icon_user_phone"
                         android:backgroundTint="@color/rasa_user_light_level_1"
-                        android:hint="@string/phone_number"
+                        android:hint="@string/rs_phone_number"
                         android:imeOptions="actionDone"
                         android:inputType="phone"
                         android:maxLength="11"
                         android:maxLines="1"
-                        android:paddingLeft="@dimen/margin_10"
+                        android:paddingLeft="@dimen/rs_margin_10"
                         android:textCursorDrawable="@drawable/rasa_user_line_red_ver_1_dp"
-                        android:textSize="@dimen/font_size_14" />
+                        android:textSize="@dimen/rs_font_size_14" />
                 </RelativeLayout>
 
                 <View
                     android:id="@+id/spacer_3"
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
+                    android:layout_height="0dp"
                     android:layout_below="@+id/rel_user_phone"
-                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/rs_margin_10"
                     android:background="@color/rasa_user_light_level_2" />
 
                 <RelativeLayout
@@ -148,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/rs_margin_10"
                         android:text=""
                         android:textColor="@color/rasa_user_light_level_2"
                         android:textSize="35dp" />
@@ -157,32 +157,32 @@
                         android:id="@+id/edit_text_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/rs_margin_10"
                         android:layout_toLeftOf="@+id/icon_user_name"
                         android:backgroundTint="@color/rasa_user_light_level_1"
                         android:hint="نام"
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:maxLines="1"
-                        android:paddingLeft="@dimen/margin_10"
+                        android:paddingLeft="@dimen/rs_margin_10"
                         android:textCursorDrawable="@drawable/rasa_user_line_red_ver_1_dp"
-                        android:textSize="@dimen/font_size_14" />
+                        android:textSize="@dimen/rs_font_size_14" />
 
                     <com.rassa.rassauser.utils.customViews.cEditText
                         android:id="@+id/edit_text_last_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/edit_text_name"
-                        android:layout_marginRight="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/rs_margin_10"
                         android:layout_toLeftOf="@+id/icon_user_name"
                         android:backgroundTint="@color/rasa_user_light_level_1"
                         android:hint="نام خانوادگی"
                         android:imeOptions="actionNext"
                         android:inputType="textPersonName"
                         android:maxLines="1"
-                        android:paddingLeft="@dimen/margin_10"
+                        android:paddingLeft="@dimen/rs_margin_10"
                         android:textCursorDrawable="@drawable/rasa_user_line_red_ver_1_dp"
-                        android:textSize="@dimen/font_size_14" />
+                        android:textSize="@dimen/rs_font_size_14" />
                 </RelativeLayout>
 
                 <View
@@ -190,7 +190,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:layout_below="@+id/rel_user_info"
-                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/rs_margin_10"
                     android:background="@color/rasa_user_md_light_green_A700" />
                 <RelativeLayout
                     android:id="@+id/rel_user_email"
@@ -204,11 +204,11 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/margin_10"
-                        android:paddingBottom="@dimen/margin_5"
-                        android:paddingLeft="@dimen/margin_5"
-                        android:paddingRight="@dimen/margin_5"
-                        android:paddingTop="@dimen/margin_5"
+                        android:layout_marginRight="@dimen/rs_margin_10"
+                        android:paddingBottom="@dimen/rs_margin_5"
+                        android:paddingLeft="@dimen/rs_margin_5"
+                        android:paddingRight="@dimen/rs_margin_5"
+                        android:paddingTop="@dimen/rs_margin_5"
                         android:text=""
                         android:textColor="@color/rasa_user_light_level_2"
                         android:textSize="25dp" />
@@ -218,16 +218,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/rs_margin_10"
                         android:layout_toLeftOf="@+id/icon_user_email"
                         android:backgroundTint="@color/rasa_user_light_level_1"
-                        android:hint="@string/email_optional"
+                        android:hint="@string/rs_email_optional"
                         android:imeOptions="actionNext"
                         android:inputType="textWebEmailAddress"
                         android:maxLines="1"
-                        android:paddingLeft="@dimen/margin_10"
+                        android:paddingLeft="@dimen/rs_margin_10"
                         android:textCursorDrawable="@drawable/rasa_user_line_red_ver_1_dp"
-                        android:textSize="@dimen/font_size_14" />
+                        android:textSize="@dimen/rs_font_size_14" />
                 </RelativeLayout>
 
 
@@ -237,7 +237,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:layout_below="@+id/rel_user_phone"
-                    android:layout_marginTop="@dimen/margin_5"
+                    android:layout_marginTop="@dimen/rs_margin_5"
                     android:background="@color/rasa_user_md_light_green_A700" />
 
             </RelativeLayout>
@@ -253,7 +253,7 @@
         android:background="@drawable/rasa_user_button_sqr_primary"
         android:text="ارسال"
         android:textColor="@color/rasa_user_light_level_0"
-        android:textSize="@dimen/font_size_16" />
+        android:textSize="@dimen/rs_font_size_16" />
     <ProgressBar
         android:id="@+id/frg_registerUserInfo_progressBar"
         style="?android:attr/progressBarStyleHorizontal"

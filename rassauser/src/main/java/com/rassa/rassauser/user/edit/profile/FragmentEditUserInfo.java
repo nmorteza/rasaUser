@@ -1,4 +1,4 @@
-package com.rassa.rassauser.user.register.userInfo;
+package com.rassa.rassauser.user.edit.profile;
 
 import android.app.Activity;
 import android.content.Context;
@@ -25,7 +25,6 @@ import android.widget.Toast;
 import com.rassa.rassauser.R;
 import com.rassa.rassauser.utils.ActivityCropImage;
 import com.rassa.rassauser.utils.UserProfile;
-import com.rassa.rassauser.utils.Utils;
 import com.rassa.rassauser.webApi.register.registerUserInfo.model.ParamsRegister;
 import com.rassa.rassauser.webApi.register.registerUserInfo.model.UserInfo;
 import com.squareup.picasso.Callback;
@@ -39,7 +38,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class FragmentUserInfo extends Fragment implements iVUserInfo {
+public class FragmentEditUserInfo extends Fragment implements iVEditUserInfo {
 
     private OnFragmentInteractionListener mListener;
 
@@ -47,9 +46,10 @@ public class FragmentUserInfo extends Fragment implements iVUserInfo {
     private EditText editTextName, editTextLastName;
     private ImageView imageViewUserImg,camera;
     private Button buttonUserInfo;
-    private PUserInfo pUserInfo;
     private TextView text_phone_number,error,title;
     private ProgressBar progressBar;
+    private PEditUserInfo pUserInfo;
+    private UserProfile userProfile;
 
     private static final int REQUEST_SELECT_IMAGE = 20;
     private Bitmap bitmapUserImage = null;
@@ -59,7 +59,7 @@ public class FragmentUserInfo extends Fragment implements iVUserInfo {
 
     private ParamsRegister paramsRegister;
 
-    public FragmentUserInfo() {
+    public FragmentEditUserInfo() {
         // Required empty public constructor
     }
 
@@ -72,7 +72,8 @@ public class FragmentUserInfo extends Fragment implements iVUserInfo {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        pUserInfo = new PUserInfo(this);
+        pUserInfo = new PEditUserInfo(this);
+        userProfile=new UserProfile(getContext());
         view = inflater.inflate(R.layout.rs_fragment_register_user_info, container, false);
         setView();
         return view;
@@ -80,17 +81,35 @@ public class FragmentUserInfo extends Fragment implements iVUserInfo {
 
     private void setView(){
         title = view.findViewById(R.id.text_toolbar_title);
-        title.setText("ثبت نام");
+        title.setText("ویرایش اطلاعات کاربری");
         editTextName = view.findViewById(R.id.edit_text_name);
         editTextLastName = view.findViewById(R.id.edit_text_last_name);
-
-        UserProfile userProfile=new UserProfile(getContext());
 
         imageViewUserImg = view.findViewById(R.id.image_user_info_avatar);
         camera = view.findViewById(R.id.image_user_info_edit);
         text_phone_number = view.findViewById(R.id.text_phone_number);
         progressBar = view.findViewById(R.id.frg_registerUserInfo_progressBar);
         text_phone_number.setText(userProfile.getKeyPhoneNumber(""));
+
+        editTextName.setText(userProfile.getKeyFirstName(""));
+        editTextLastName.setText(userProfile.getKeyLastName(""));
+
+        String imageUrl=userProfile.getKeyImgUrl("avatar");
+        if(!imageUrl.isEmpty() || imageUrl != null){
+            Picasso.get().load(imageUrl).error(R.drawable.ruser_empty_gray).placeholder(R.drawable.ruser_empty_gray).into(imageViewUserImg, new Callback() {
+                @Override
+                public void onSuccess() {
+
+                }
+
+                @Override
+                public void onError(Exception e) {
+                }
+            });
+        } else {
+            Picasso.get().load(R.drawable.ruser_empty_gray).into(imageViewUserImg);
+        }
+
         error = view.findViewById(R.id.text_error);
         imageViewUserImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +119,6 @@ public class FragmentUserInfo extends Fragment implements iVUserInfo {
                         REQUEST_SELECT_IMAGE);
             }
         });
-
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,7 +129,7 @@ public class FragmentUserInfo extends Fragment implements iVUserInfo {
         });
 
         buttonUserInfo = view.findViewById(R.id.frg_registerUserInfo_sendBtn);
-        buttonUserInfo.setText("ثبت نام");
+        buttonUserInfo.setText("ویرایش اطلاعات");
 
         buttonUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,14 +144,13 @@ public class FragmentUserInfo extends Fragment implements iVUserInfo {
                 InputMethodManager imm = (InputMethodManager) getContext().getSystemService(getContext().INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
 
-                    paramsRegister = new ParamsRegister();
-                    paramsRegister.setPhoneNumber(Utils.getStringPreference(getContext(),
-                            Utils.KEY_REGISTER, Utils.KEY_PHONENUMBER, "-1"));
-                    paramsRegister.setEmail("");
-                    paramsRegister.setFirstName(editTextName.getText().toString());
-                    paramsRegister.setLastName(editTextLastName.getText().toString());
-                    paramsRegister.setImageUrl(encodedImageData);
-                    pUserInfo.setUserInfo(paramsRegister);
+                paramsRegister = new ParamsRegister();
+                paramsRegister.setPhoneNumber(userProfile.getKeyPhoneNumber(""));
+                paramsRegister.setEmail("");
+                paramsRegister.setFirstName(editTextName.getText().toString());
+                paramsRegister.setLastName(editTextLastName.getText().toString());
+                paramsRegister.setImageUrl(encodedImageData);
+                pUserInfo.setUserInfo(paramsRegister);
 
             }
         });
@@ -188,7 +205,6 @@ public class FragmentUserInfo extends Fragment implements iVUserInfo {
         error.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
         buttonUserInfo.setEnabled(false);
-
         if (mListener!=null) {
             mListener.onStartSetUserInfo();
         }
@@ -207,6 +223,7 @@ public class FragmentUserInfo extends Fragment implements iVUserInfo {
         error.setVisibility(View.VISIBLE);
         progressBar.setVisibility(View.GONE);
         buttonUserInfo.setEnabled(true);
+
         if (mListener!=null) {
             mListener.setUserInfoFailed(msg);
         }
@@ -214,8 +231,10 @@ public class FragmentUserInfo extends Fragment implements iVUserInfo {
 
 
 
-    public interface OnFragmentInteractionListener {
 
+
+
+    public interface OnFragmentInteractionListener {
 
         void onStartSetUserInfo();
         void setUserInfoSuccess();

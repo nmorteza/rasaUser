@@ -34,8 +34,8 @@
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
                         android:gravity="center_vertical"
-                        android:paddingLeft="@dimen/margin_10"
-                        android:paddingRight="@dimen/margin_10"
+                        android:paddingLeft="@dimen/rs_margin_10"
+                        android:paddingRight="@dimen/rs_margin_10"
                         android:text=""
                         android:textColor="@color/rasa_user_light_level_0"
                         android:textSize="20sp" />
@@ -47,7 +47,7 @@
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/icon_back"
                         android:textColor="@color/rasa_user_light_level_0"
-                        android:textSize="@dimen/font_size_14" />
+                        android:textSize="@dimen/rs_font_size_14" />
 
                     <com.rassa.rassauser.utils.customViews.CustomTextViewBold
                         android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
                         android:layout_height="100dp"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:padding="@dimen/margin_10"
+                        android:padding="@dimen/rs_margin_10"
                         android:src="@drawable/ruser_image_email" />
 
                 </RelativeLayout>
@@ -94,20 +94,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/rel_top"
-                    android:textSize="@dimen/font_size_16"
+                    android:textSize="@dimen/rs_font_size_16"
                     android:textColor="@color/rasa_user_light_level_4"
-                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/rs_margin_20"
                     android:layout_centerHorizontal="true"
                     android:layout_marginRight="80dp"
                     android:gravity="center"
-                    android:text="@string/hint_send_key"
+                    android:text="@string/rs_hint_send_key"
                     />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/text_hint"
-                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/rs_margin_10"
                     >
 
 
@@ -117,8 +117,8 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:text="خطایی رخ داده است"
-                        android:textColor="@color/Red"
-                        android:textSize="@dimen/font_size_12"
+                        android:textColor="@color/rs_Red"
+                        android:textSize="@dimen/rs_font_size_12"
                         android:visibility="gone" />
 
                     <RelativeLayout
@@ -126,23 +126,23 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/text_error"
-                        android:layout_marginLeft="@dimen/margin_50"
-                        android:layout_marginRight="@dimen/margin_50">
+                        android:layout_marginLeft="@dimen/rs_margin_50"
+                        android:layout_marginRight="@dimen/rs_margin_50">
 
                         <com.rassa.rassauser.utils.customViews.cEditText
                             android:id="@+id/text_message_code"
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/margin_50"
+                            android:layout_height="@dimen/rs_margin_50"
                             android:background="@android:color/transparent"
                             android:gravity="center"
-                            android:hint="@string/recieved_text"
+                            android:hint="@string/rs_recieved_text"
                             android:inputType="number"
                             android:maxLength="11"
                             android:textColor="@color/rasa_user_dark_level_1"
                             android:paddingLeft="25dp"
                             android:textColorHint="@color/rasa_user_md_light_green_A200"
                             android:textCursorDrawable="@drawable/rasa_user_line_red_ver_1_dp"
-                            android:textSize="@dimen/font_size_14"
+                            android:textSize="@dimen/rs_font_size_14"
                             android:layout_centerVertical="true"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
@@ -163,7 +163,7 @@
                             android:layout_alignRight="@+id/icon_phone_number"
                             android:layout_alignLeft="@+id/text_message_code"
                             android:layout_below="@+id/text_message_code"
-                            android:layout_marginTop="@dimen/margin_10"
+                            android:layout_marginTop="@dimen/rs_margin_10"
                             android:background="@color/rasa_user_md_light_green_A700"
                             />
                     </RelativeLayout>
@@ -194,14 +194,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_below="@+id/rel_phone_number"
-                        android:layout_marginLeft="@dimen/margin_50"
-                        android:layout_marginRight="@dimen/margin_50"
+                        android:layout_marginLeft="@dimen/rs_margin_50"
+                        android:layout_marginRight="@dimen/rs_margin_50"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/rasa_user_button_sqr_primary"
                         android:gravity="center"
                         android:text="ارسال"
                         android:textColor="@color/rasa_user_light_level_0"
-                        android:textSize="@dimen/font_size_14" />
+                        android:textSize="@dimen/rs_font_size_14" />
 
                     <com.rassa.rassauser.utils.customViews.CustomTextView
                         android:id="@+id/text_resend_code"
@@ -209,10 +209,10 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/frg_sendKey_btn"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="@dimen/margin_20"
-                        android:textSize="@dimen/font_size_12"
-                        android:textColor="@color/Red"
-                        android:text="@string/res_end_key"
+                        android:layout_marginTop="@dimen/rs_margin_20"
+                        android:textSize="@dimen/rs_font_size_12"
+                        android:textColor="@color/rs_Red"
+                        android:text="@string/rs_res_end_key"
                         />
 
                 </RelativeLayout>

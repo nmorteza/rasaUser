@@ -16,7 +16,4 @@ public interface iVUserInfo {
     void setUserInfoSuccess(UserInfo userInfo);
     void setUserInfoFailed(String msg);
 
-    void onStartGetUserInfo();
-    void getUserInfoSuccess(UserInfo userInfo);
-    void getUserInfoFailed(String msg);
 }

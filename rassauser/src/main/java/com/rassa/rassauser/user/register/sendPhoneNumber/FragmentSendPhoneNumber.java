@@ -46,7 +46,7 @@ public class FragmentSendPhoneNumber extends Fragment implements iVSendPhoneNumb
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         pSendPhoneNumber = new PSendPhoneNumber(this);
-        view = inflater.inflate(R.layout.fragment_send_phone_number, container, false);
+        view = inflater.inflate(R.layout.rs_fragment_send_phone_number, container, false);
         setView();
         return view;
     }
